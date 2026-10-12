@@ -1,34 +1,146 @@
+/* Tokens mirror the app's DesignSystem (Oxford Archive, ADR-0019). Gold is a fill, never text on vellum. */
 :root {
-  --bg: #fbfaf7;
-  --fg: #1d1c1a;
-  --muted: #6b6760;
-  --rule: #e4e0d8;
-  --link: #1f5fa8;
+  --ground: #f4efe4;
+  --surface: #faf7f2;
+  --raised: #ffffff;
+  --ink: #0f1620;
+  --ink-2: #3a4652;
+  --gold: #ac8235;
+  --gold-fill: #8f6a22;
+  --on-gold: #faf7f2;
+  --knowledge: #e8c77a;
+  --shelf: #1f2f27;
+  --on-shelf: #f4efe4;
+  --hairline: #e3dccb;
+  --link: #6b4f17;
+  --serif: "New York", ui-serif, "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  color-scheme: light dark;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #161514;
-    --fg: #ece9e4;
-    --muted: #a19c94;
-    --rule: #34322e;
-    --link: #8ab8ec;
+    --ground: #0f1620;
+    --surface: #1a2330;
+    --raised: #222d3c;
+    --ink: #f4efe4;
+    --ink-2: #a8b4c0;
+    --gold: #d1b16a;
+    --gold-fill: #d1b16a;
+    --on-gold: #0f1620;
+    --knowledge: #f2e3b2;
+    --shelf: #2f4336;
+    --hairline: #2a3543;
+    --link: #d1b16a;
   }
 }
+
 * { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--fg);
-  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  -webkit-text-size-adjust: 100%;
+  background: var(--ground);
+  color: var(--ink);
+  font: 17px/1.6 var(--sans);
 }
-main { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem 4rem; }
-nav { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.95rem; margin-bottom: 2rem; }
-nav .home { font-weight: 600; color: var(--fg); text-decoration: none; }
-h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 0.25rem; }
-h2 { font-size: 1.2rem; margin: 2rem 0 0.5rem; }
-.meta { color: var(--muted); margin: 0 0 1.5rem; }
-.summary { border-left: 3px solid var(--rule); padding-left: 1rem; }
-a { color: var(--link); }
-ul { padding-left: 1.25rem; }
-footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.9rem; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--link); text-underline-offset: 2px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.01em; }
+
+/* ---------- Shared header / footer ---------- */
+.bar {
+  max-width: 72rem; margin: 0 auto; padding: 1rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+.brand { display: flex; align-items: center; gap: 0.6rem; color: var(--ink); text-decoration: none; font-family: var(--serif); font-weight: 600; font-size: 1.1rem; }
+.brand img { width: 32px; height: 32px; border-radius: 22.5%; }
+.bar nav { display: flex; gap: 1.25rem; font-size: 0.95rem; }
+.bar nav a { color: var(--ink-2); text-decoration: none; }
+.bar nav a:hover { color: var(--ink); }
+.site-footer {
+  border-top: 1px solid var(--hairline);
+  color: var(--ink-2); font-size: 0.9rem;
+}
+.site-footer .bar { padding-top: 1.5rem; padding-bottom: 2.5rem; flex-wrap: wrap; }
+
+/* ---------- Landing ---------- */
+.hero {
+  max-width: 72rem; margin: 0 auto; padding: 2rem 1rem 4rem;
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center;
+}
+.hero .icon { width: 88px; height: 88px; border-radius: 22.5%; box-shadow: 0 8px 24px rgb(15 22 32 / 0.18); margin-bottom: 1.5rem; }
+.hero h1 { font-size: clamp(2.3rem, 5vw, 3.3rem); line-height: 1.05; margin: 0 0 1rem; }
+.hero .lede { font-size: 1.2rem; color: var(--ink-2); margin: 0 0 1.75rem; max-width: 34rem; }
+.cta { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+.pill {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.8rem 1.3rem; border-radius: 999px;
+  background: var(--gold-fill); color: var(--on-gold);
+  font-weight: 600; text-decoration: none;
+}
+.pill.ghost { background: transparent; color: var(--ink); border: 1px solid var(--hairline); font-weight: 500; }
+.promises { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: 1.75rem 0 0; padding: 0; list-style: none; color: var(--ink-2); font-size: 0.95rem; }
+.promises li::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); margin-right: 0.5rem; vertical-align: 2px; }
+
+.phone {
+  width: 100%; max-width: 320px; margin: 0 auto;
+  border-radius: 46px; padding: 10px;
+  background: #0b0f15;
+  box-shadow: 0 30px 60px -20px rgb(15 22 32 / 0.45), 0 0 0 1px rgb(255 255 255 / 0.06) inset;
+}
+.phone img { border-radius: 37px; width: 100%; }
+.phone.small { max-width: 280px; }
+
+.section { max-width: 72rem; margin: 0 auto; padding: 4.5rem 1rem; }
+.section + .section { border-top: 1px solid var(--hairline); }
+.feature { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+.feature.flip .copy { order: 2; }
+.eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); margin: 0 0 0.75rem; }
+.eyebrow::before { content: ""; display: inline-block; width: 18px; height: 2px; background: var(--gold); margin-right: 0.6rem; vertical-align: 4px; }
+.feature h2, .section > h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); line-height: 1.15; margin: 0 0 1rem; }
+.feature p { color: var(--ink-2); font-size: 1.08rem; margin: 0 0 1rem; max-width: 32rem; }
+.ticks { list-style: none; padding: 0; margin: 1.25rem 0 0; }
+.ticks li { padding-left: 1.6rem; position: relative; margin: 0.45rem 0; }
+.ticks li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 10px; height: 10px; border-radius: 2px; background: var(--knowledge); }
+
+.formats { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+.formats span { border: 1px solid var(--hairline); background: var(--surface); border-radius: 8px; padding: 0.25rem 0.65rem; font-size: 0.85rem; font-weight: 600; color: var(--ink-2); }
+
+/* Atlas lives on the shelf green, like the app's own chrome. */
+.atlas { background: var(--shelf); color: var(--on-shelf); }
+.atlas .section { border: 0; }
+.atlas h2 { color: var(--on-shelf); }
+.atlas .eyebrow, .atlas p { color: rgb(244 239 228 / 0.78); }
+.atlas .glyph { width: 56px; height: 56px; color: #d1b16a; margin-bottom: 1.25rem; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
+.card { background: rgb(255 255 255 / 0.06); border: 1px solid rgb(255 255 255 / 0.1); border-radius: 16px; padding: 1.4rem; }
+.card h3 { margin: 0 0 0.4rem; font-size: 1.2rem; color: var(--on-shelf); }
+.card p { margin: 0; font-size: 0.98rem; }
+.atlas .fine { font-size: 0.9rem; margin-top: 2rem; }
+
+.pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+.plan { background: var(--surface); border: 1px solid var(--hairline); border-radius: 16px; padding: 1.75rem; }
+.plan h3 { margin: 0; font-size: 1.4rem; }
+.plan .price { font-family: var(--serif); font-size: 1.1rem; color: var(--ink-2); margin: 0.25rem 0 1rem; }
+.plan.gold { border: 2px solid var(--gold); }
+
+.privacy-band { text-align: center; }
+.privacy-band p { color: var(--ink-2); max-width: 38rem; margin: 0 auto 1.5rem; font-size: 1.1rem; }
+
+@media (max-width: 820px) {
+  .hero, .feature { grid-template-columns: 1fr; gap: 2.5rem; }
+  .feature.flip .copy { order: 0; }
+  .hero { padding-top: 1rem; text-align: left; }
+  .cards, .pricing { grid-template-columns: 1fr; }
+  .section { padding: 3.5rem 1rem; }
+  .bar nav { gap: 0.9rem; }
+  .phone { max-width: 280px; }
+  .phone.small { max-width: 250px; }
+}
+
+/* ---------- Policy pages ---------- */
+.doc { max-width: 42rem; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+.doc h1 { font-size: 2.1rem; line-height: 1.2; margin: 0 0 0.25rem; }
+.doc h2 { font-size: 1.3rem; margin: 2.2rem 0 0.5rem; }
+.doc .meta { color: var(--ink-2); margin: 0 0 1.75rem; }
+.doc .summary { background: var(--surface); border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0; padding: 1rem 1.25rem; }
+.doc ul { padding-left: 1.25rem; }

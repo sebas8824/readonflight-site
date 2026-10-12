@@ -3,23 +3,156 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Read on Flight</title>
-<meta name="description" content="Read on Flight es un lector sin conexión para libros técnicos que convierte tus resaltados en conocimiento que puedes buscar y consultar.">
+<title>Read on Flight — tu lectura y tu conocimiento, organizados donde vayas</title>
+<meta name="description" content="Un lector sin conexión para libros técnicos. Lee PDF, EPUB y Markdown, resalta con intención y estudia con Atlas, un asistente que funciona en tu iPhone. Sin cuenta, sin rastreo.">
+<meta property="og:title" content="Read on Flight">
+<meta property="og:description" content="Tu lectura y tu conocimiento, organizados donde vayas. Un lector sin conexión para libros técnicos, para iPhone.">
+<meta property="og:image" content="https://sebas8824.github.io/readonflight-site/img/library.jpg">
+<meta name="theme-color" content="#f4efe4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1620" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../img/icon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="alternate" hreflang="en" href="../">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+
+<header class="bar">
+  <a class="brand" href="./"><img src="../img/icon.png" alt="">Read on Flight</a>
+  <nav><a href="#atlas">Atlas</a><a href="#precios">Precios</a><a href="support.html">Soporte</a><a href="../" lang="en">EN</a></nav>
+</header>
+
 <main>
-<nav><a class="home" href="./">Read on Flight</a><a href="../" lang="en">English</a></nav>
-<h1>Read on Flight</h1>
-<p class="meta">Un lector sin conexión para libros técnicos, para iPhone.</p>
-<p>Lee libros en PDF, EPUB y Markdown, resalta lo importante y convierte tus resaltados en
-conocimiento que puedes buscar y consultar. Todo funciona en tu iPhone, incluido Atlas, el
-asistente que responde a partir de tus libros. Funciona en modo avión.</p>
-<ul>
-<li><a href="privacy.html">Política de privacidad</a></li>
-<li><a href="support.html">Soporte</a></li>
-</ul>
+  <section class="hero">
+    <div>
+      <img class="icon" src="../img/icon.png" alt="Ícono de Read on Flight">
+      <h1>Tu lectura y tu conocimiento, organizados donde vayas.</h1>
+      <p class="lede">Un lector sin conexión para libros técnicos. Resalta lo importante, dale un
+      significado y estúdialo con Atlas, todo en tu iPhone, incluso a diez mil metros de altura.</p>
+      <div class="cta">
+        <span class="pill">Muy pronto en el App Store</span>
+        <a class="pill ghost" href="#funciones">Cómo funciona</a>
+      </div>
+      <ul class="promises">
+        <li>Funciona en modo avión</li>
+        <li>Sin cuenta</li>
+        <li>Sin rastreo</li>
+      </ul>
+    </div>
+    <div class="phone">
+      <picture>
+        <source srcset="../img/library-dark.jpg" media="(prefers-color-scheme: dark)">
+        <img src="../img/library.jpg" width="646" height="1400" alt="La biblioteca: una tarjeta de Seguir estudiando con Relatividad de Einstein sobre un estante de tres portadas.">
+      </picture>
+    </div>
+  </section>
+
+  <section class="section" id="funciones">
+    <div class="feature">
+      <div class="copy">
+        <p class="eyebrow">Leer</p>
+        <h2>Una página tranquila para libros densos.</h2>
+        <p>Abre los PDF, EPUB y archivos Markdown que ya tienes. La página se mantiene limpia hasta
+        que pides más, y la app siempre sabe cuánto te falta del capítulo.</p>
+        <div class="formats"><span>PDF</span><span>EPUB</span><span>Markdown</span><span>Diagramas Mermaid</span><span>Texto en vivo en figuras</span></div>
+      </div>
+      <div class="phone small"><img src="../img/reader.jpg" width="646" height="1400" loading="lazy" alt="Una página de Relatividad con un pasaje resaltado en verde y el panel de lectura abajo."></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="feature flip">
+      <div class="copy">
+        <p class="eyebrow">Capturar</p>
+        <h2>Resalta con intención, no solo con color.</h2>
+        <p>Cada resaltado pertenece a una categoría que tú eliges, así una definición, una duda y
+        algo para recordar nunca se mezclan. Agrega una nota o díctala: la voz se reconoce en tu
+        iPhone.</p>
+        <ul class="ticks">
+          <li>Cada resaltado guarda el pasaje exacto</li>
+          <li>Los temas salen del propio índice del libro</li>
+          <li>Exporta todo a Markdown, por libro o la biblioteca entera</li>
+        </ul>
+      </div>
+      <div class="phone small"><img src="../img/select.jpg" width="646" height="1400" loading="lazy" alt="Un pasaje seleccionado con el menú: Resaltar, Nota, Preguntar a Atlas, Copiar."></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="feature">
+      <div class="copy">
+        <p class="eyebrow">Encontrar</p>
+        <h2>Tus notas, a un toque de la página.</h2>
+        <p>El índice, la búsqueda en todo el texto y tus propias notas comparten un mismo panel.
+        Reúne libros en un proyecto de estudio cuando un tema abarca más de uno.</p>
+      </div>
+      <div class="phone small"><img src="../img/contents.jpg" width="646" height="1400" loading="lazy" alt="El panel de contenido con las pestañas Contenido, Buscar y Notas sobre el libro."></div>
+    </div>
+  </section>
+
+  <div class="atlas" id="atlas">
+    <section class="section">
+      <svg class="glyph" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M2 11.8c2.3-.9 4.7-.7 7 .7v10c-2.4-1.4-4.7-1.6-7-.7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 11.8c-2.3-.9-4.7-.7-7 .7v10c2.4-1.4 4.7-1.6 7-.7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.6 0.2Q16.72 4.68 21.2 5.8Q16.72 6.92 15.6 11.4Q14.48 6.92 10 5.8Q14.48 4.68 15.6 0.2Z" fill="currentColor"/>
+        <path d="M20.4 11.8Q21.04 14.36 23.6 15Q21.04 15.64 20.4 18.2Q19.76 15.64 17.2 15Q19.76 14.36 20.4 11.8Z" fill="currentColor"/>
+        <path d="M5.4 2Q6.04 4.56 8.6 5.2Q6.04 5.84 5.4 8.4Q4.76 5.84 2.2 5.2Q4.76 4.56 5.4 2Z" fill="currentColor"/>
+      </svg>
+      <p class="eyebrow">Estudia con Atlas</p>
+      <h2>Un compañero de estudio que nunca sale de tu teléfono.</h2>
+      <p>Atlas usa el modelo en el dispositivo de Apple. Tus preguntas y tus libros se quedan en tu
+      iPhone, y funciona en modo avión.</p>
+      <div class="cards">
+        <div class="card"><h3>Pregunta sobre un pasaje</h3><p>Selecciona una frase que no entiendes y pregunta. Atlas responde con los pasajes que usó, para que puedas verificarlos.</p></div>
+        <div class="card"><h3>Destilar</h3><p>Convierte los resaltados de un capítulo en unos pocos puntos que puedes guardar como tus propias notas.</p></div>
+        <div class="card"><h3>Mejorar una nota</h3><p>Pule una nota en borrador. Nada cambia hasta que lo aceptas.</p></div>
+      </div>
+      <p class="fine">Atlas necesita un iPhone con Apple Intelligence. Puede equivocarse, así que
+      verifica en el libro lo que sea importante.</p>
+    </section>
+  </div>
+
+  <section class="section" id="precios">
+    <p class="eyebrow">Precios</p>
+    <h2>El lector es gratis. Atlas es tuyo para siempre.</h2>
+    <div class="pricing">
+      <div class="plan">
+        <h3>Lector</h3>
+        <p class="price">Gratis</p>
+        <ul class="ticks">
+          <li>PDF, EPUB y Markdown</li>
+          <li>Resaltados, notas, temas y búsqueda</li>
+          <li>Proyectos de estudio y exportación a Markdown</li>
+        </ul>
+      </div>
+      <div class="plan gold">
+        <h3>Atlas Lifetime</h3>
+        <p class="price">Una sola compra, sin suscripción</p>
+        <ul class="ticks">
+          <li>Pruébalo diez veces gratis</li>
+          <li>Pregunta, destila y mejora sin límites</li>
+          <li>Restáuralo en un iPhone nuevo</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section privacy-band">
+    <p class="eyebrow">Privacidad</p>
+    <h2>Nada sale de tu iPhone.</h2>
+    <p>Sin cuenta, sin analítica, sin anuncios. Tus libros, resaltados, notas y preguntas nunca
+    nos llegan, porque la app no tiene a dónde enviarlos.</p>
+    <a class="pill ghost" href="privacy.html">Lee la política de privacidad</a>
+  </section>
 </main>
+
+<footer class="site-footer">
+  <div class="bar">
+    <span>© 2026 Read on Flight</span>
+    <nav><a href="privacy.html">Privacidad</a><a href="support.html">Soporte</a><a href="../" lang="en">English</a></nav>
+  </div>
+</footer>
+
 </body>
 </html>
