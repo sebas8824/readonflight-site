@@ -48,48 +48,52 @@
     </div>
   </section>
 
-  <section class="section" id="funciones">
-    <div class="feature">
-      <div class="copy">
-        <p class="eyebrow">Leer</p>
-        <h2>Hecha para los libros que exigen.</h2>
-        <p>Abre los PDF, EPUB y archivos Markdown que ya tienes, sin tiendas ni conversiones. La
-        página no te distrae mientras lees y, cuando quieres saberlo, te muestra cuánto te falta
-        del capítulo.</p>
-        <div class="formats"><span>PDF</span><span>EPUB</span><span>Markdown</span><span>Diagramas Mermaid</span><span>Texto en vivo en las figuras</span></div>
-      </div>
-      <div class="phone small"><img src="../img/reader.jpg" width="646" height="1400" loading="lazy" alt="Una página de Relatividad con un pasaje resaltado en verde y el panel de lectura abajo."></div>
+  <section class="section tour" id="funciones">
+    <div class="tour-steps">
+      <article class="step is-active">
+        <div class="copy">
+          <p class="eyebrow">Leer</p>
+          <h2>Hecha para los libros que exigen.</h2>
+          <p>Abre los PDF, EPUB y archivos Markdown que ya tienes, sin tiendas ni conversiones. La
+          página no te distrae mientras lees y, cuando quieres saberlo, te muestra cuánto te falta
+          del capítulo.</p>
+          <div class="formats"><span>PDF</span><span>EPUB</span><span>Markdown</span><span>Diagramas Mermaid</span><span>Texto en vivo en las figuras</span></div>
+        </div>
+        <div class="phone small step-shot"><img src="../img/reader.jpg" width="646" height="1400" loading="lazy" alt="Una página de Relatividad con un pasaje resaltado en verde y el panel de lectura abajo."></div>
+      </article>
+      <article class="step">
+        <div class="copy">
+          <p class="eyebrow">Capturar</p>
+          <h2>Resalta como piensas.</h2>
+          <p>Guarda una definición, una duda o algo que quieres recordar en su propia categoría, para
+          que dentro de un mes sepas por qué lo marcaste. Escribe una nota o simplemente díctala: el
+          dictado ocurre en tu iPhone.</p>
+          <ul class="ticks">
+            <li>Cada resaltado guarda el pasaje exacto, aunque el archivo ya no esté</li>
+            <li>Los temas salen directo del índice del libro</li>
+            <li>Exporta todo a Markdown: un libro o toda tu biblioteca</li>
+          </ul>
+        </div>
+        <div class="phone small step-shot"><img src="../img/select.jpg" width="646" height="1400" loading="lazy" alt="Un pasaje seleccionado con el menú: Resaltar, Nota, Preguntar a Atlas, Copiar."></div>
+      </article>
+      <article class="step">
+        <div class="copy">
+          <p class="eyebrow">Encontrar</p>
+          <h2>Todo lo que marcaste, a un toque.</h2>
+          <p>El índice, la búsqueda en todo el libro y tus notas viven en un mismo panel, sobre la
+          página. Cuando un tema abarca varios libros, reúnelos en un proyecto de estudio y tenlo
+          todo en un solo lugar.</p>
+        </div>
+        <div class="phone small step-shot"><img src="../img/contents.jpg" width="646" height="1400" loading="lazy" alt="El panel con las pestañas Índice, Buscar y Notas sobre el libro."></div>
+      </article>
     </div>
-  </section>
-
-  <section class="section">
-    <div class="feature flip">
-      <div class="copy">
-        <p class="eyebrow">Capturar</p>
-        <h2>Resalta como piensas.</h2>
-        <p>Guarda una definición, una duda o algo que quieres recordar en su propia categoría, para
-        que dentro de un mes sepas por qué lo marcaste. Escribe una nota o simplemente díctala: el
-        dictado ocurre en tu iPhone.</p>
-        <ul class="ticks">
-          <li>Cada resaltado guarda el pasaje exacto, aunque el archivo ya no esté</li>
-          <li>Los temas salen directo del índice del libro</li>
-          <li>Exporta todo a Markdown: un libro o toda tu biblioteca</li>
-        </ul>
-      </div>
-      <div class="phone small"><img src="../img/select.jpg" width="646" height="1400" loading="lazy" alt="Un pasaje seleccionado con el menú: Resaltar, Nota, Preguntar a Atlas, Copiar."></div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="feature">
-      <div class="copy">
-        <p class="eyebrow">Encontrar</p>
-        <h2>Todo lo que marcaste, a un toque.</h2>
-        <p>El índice, la búsqueda en todo el libro y tus notas viven en un mismo panel, sobre la
-        página. Cuando un tema abarca varios libros, reúnelos en un proyecto de estudio y tenlo
-        todo en un solo lugar.</p>
-      </div>
-      <div class="phone small"><img src="../img/contents.jpg" width="646" height="1400" loading="lazy" alt="El panel con las pestañas Índice, Buscar y Notas sobre el libro."></div>
+    <div class="tour-stage">
+      <div class="phone"><div class="shots">
+        <img class="shot is-on" src="../img/reader.jpg" width="646" height="1400" alt="Una página de Relatividad con un pasaje resaltado en verde y el panel de lectura abajo.">
+        <img class="shot" loading="lazy" src="../img/select.jpg" width="646" height="1400" alt="Un pasaje seleccionado con el menú: Resaltar, Nota, Preguntar a Atlas, Copiar.">
+        <img class="shot" loading="lazy" src="../img/contents.jpg" width="646" height="1400" alt="El panel con las pestañas Índice, Buscar y Notas sobre el libro.">
+      </div></div>
+      <div class="tour-dots" aria-hidden="true"><span class="is-on"></span><span></span><span></span></div>
     </div>
   </section>
 
@@ -155,5 +159,6 @@
   </div>
 </footer>
 
+<script src="tour.js" defer></script>
 </body>
 </html>

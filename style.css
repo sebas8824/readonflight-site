@@ -96,11 +96,26 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.01e
 .feature.flip .copy { order: 2; }
 .eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); margin: 0 0 0.75rem; }
 .eyebrow::before { content: ""; display: inline-block; width: 18px; height: 2px; background: var(--gold); margin-right: 0.6rem; vertical-align: 4px; }
-.feature h2, .section > h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); line-height: 1.15; margin: 0 0 1rem; }
-.feature p { color: var(--ink-2); font-size: 1.08rem; margin: 0 0 1rem; max-width: 32rem; }
+.feature h2, .step h2, .section > h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); line-height: 1.15; margin: 0 0 1rem; }
+.feature p, .step p { color: var(--ink-2); font-size: 1.08rem; margin: 0 0 1rem; max-width: 32rem; }
 .ticks { list-style: none; padding: 0; margin: 1.25rem 0 0; }
 .ticks li { padding-left: 1.6rem; position: relative; margin: 0.45rem 0; }
 .ticks li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 10px; height: 10px; border-radius: 2px; background: var(--knowledge); }
+
+/* Feature tour: the phone stays put while the steps scroll past it (tour.js picks the shot). */
+.tour { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; }
+.step { min-height: 88vh; display: flex; align-items: center; }
+.step-shot { display: none; }
+.js .step .copy { opacity: 0.28; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.6s ease; }
+.js .step.is-active .copy { opacity: 1; transform: none; }
+.tour-stage { position: sticky; top: max(4.5rem, calc(50vh - 340px)); align-self: start; }
+.tour-stage .phone { max-width: 290px; }
+.shots { position: relative; aspect-ratio: 646 / 1400; }
+.shot { position: absolute; inset: 0; height: 100%; opacity: 0; transform: scale(0.97); transition: opacity 0.55s ease, transform 0.7s ease; }
+.shot.is-on { opacity: 1; transform: none; }
+.tour-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.25rem; }
+.tour-dots span { width: 8px; height: 8px; border-radius: 4px; background: var(--hairline); transition: width 0.3s ease, background 0.3s ease; }
+.tour-dots span.is-on { width: 24px; background: var(--gold); }
 
 .formats { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
 .formats span { border: 1px solid var(--hairline); background: var(--surface); border-radius: 8px; padding: 0.25rem 0.65rem; font-size: 0.85rem; font-weight: 600; color: var(--ink-2); }
@@ -135,6 +150,19 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.01e
   .bar nav { gap: 0.9rem; }
   .phone { max-width: 280px; }
   .phone.small { max-width: 250px; }
+  /* Too narrow to pin a phone beside the words: each step brings its own shot up as it arrives. */
+  .tour { display: block; }
+  .tour-stage { display: none; }
+  .step { min-height: 0; display: grid; gap: 2rem; padding: 1.5rem 0 2.5rem; }
+  .step-shot { display: block; }
+  .js .step .copy { opacity: 1; transform: none; }
+  .js .step { opacity: 0; transform: translateY(36px); transition: opacity 0.6s ease, transform 0.7s ease; }
+  .js .step.seen { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .step, .js .step .copy, .shot, .tour-dots span { transition: none; }
+  .js .step { opacity: 1; transform: none; }
 }
 
 /* ---------- Policy pages ---------- */

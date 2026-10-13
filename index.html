@@ -48,47 +48,51 @@
     </div>
   </section>
 
-  <section class="section" id="features">
-    <div class="feature">
-      <div class="copy">
-        <p class="eyebrow">Read</p>
-        <h2>Built for the books that take effort.</h2>
-        <p>Open the PDFs, EPUBs and Markdown files you already own, with no store and no conversion.
-        The page stays out of your way while you read, and shows how much of the chapter is left
-        when you want to know.</p>
-        <div class="formats"><span>PDF</span><span>EPUB</span><span>Markdown</span><span>Mermaid diagrams</span><span>Live Text in figures</span></div>
-      </div>
-      <div class="phone small"><img src="img/reader.jpg" width="646" height="1400" loading="lazy" alt="A page of Relativity with a passage highlighted in green and the reading dock below."></div>
+  <section class="section tour" id="features">
+    <div class="tour-steps">
+      <article class="step is-active">
+        <div class="copy">
+          <p class="eyebrow">Read</p>
+          <h2>Built for the books that take effort.</h2>
+          <p>Open the PDFs, EPUBs and Markdown files you already own, with no store and no conversion.
+          The page stays out of your way while you read, and shows how much of the chapter is left
+          when you want to know.</p>
+          <div class="formats"><span>PDF</span><span>EPUB</span><span>Markdown</span><span>Mermaid diagrams</span><span>Live Text in figures</span></div>
+        </div>
+        <div class="phone small step-shot"><img src="img/reader.jpg" width="646" height="1400" loading="lazy" alt="A page of Relativity with a passage highlighted in green and the reading dock below."></div>
+      </article>
+      <article class="step">
+        <div class="copy">
+          <p class="eyebrow">Capture</p>
+          <h2>Highlight the way you think.</h2>
+          <p>File a definition, a doubt or something to remember under its own category, so a month
+          from now you still know why you marked it. Type a note, or just say it: dictation happens
+          on your iPhone.</p>
+          <ul class="ticks">
+            <li>Every highlight keeps its exact passage, even if the file is gone</li>
+            <li>Topics come straight from the book's table of contents</li>
+            <li>Export it all to Markdown: one book or your whole library</li>
+          </ul>
+        </div>
+        <div class="phone small step-shot"><img src="img/select.jpg" width="646" height="1400" loading="lazy" alt="A selected passage with the menu: Highlight, Note, Ask Atlas, Copy."></div>
+      </article>
+      <article class="step">
+        <div class="copy">
+          <p class="eyebrow">Find</p>
+          <h2>Everything you marked, one tap away.</h2>
+          <p>Contents, full-text search and your notes live in one panel, right over the page. When a
+          subject spans several books, gather them into a study project and see it all in one place.</p>
+        </div>
+        <div class="phone small step-shot"><img src="img/contents.jpg" width="646" height="1400" loading="lazy" alt="The contents panel with Contents, Search and Notes tabs over the book."></div>
+      </article>
     </div>
-  </section>
-
-  <section class="section">
-    <div class="feature flip">
-      <div class="copy">
-        <p class="eyebrow">Capture</p>
-        <h2>Highlight the way you think.</h2>
-        <p>File a definition, a doubt or something to remember under its own category, so a month
-        from now you still know why you marked it. Type a note, or just say it: dictation happens
-        on your iPhone.</p>
-        <ul class="ticks">
-          <li>Every highlight keeps its exact passage, even if the file is gone</li>
-          <li>Topics come straight from the book's table of contents</li>
-          <li>Export it all to Markdown: one book or your whole library</li>
-        </ul>
-      </div>
-      <div class="phone small"><img src="img/select.jpg" width="646" height="1400" loading="lazy" alt="A selected passage with the menu: Highlight, Note, Ask Atlas, Copy."></div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="feature">
-      <div class="copy">
-        <p class="eyebrow">Find</p>
-        <h2>Everything you marked, one tap away.</h2>
-        <p>Contents, full-text search and your notes live in one panel, right over the page. When a
-        subject spans several books, gather them into a study project and see it all in one place.</p>
-      </div>
-      <div class="phone small"><img src="img/contents.jpg" width="646" height="1400" loading="lazy" alt="The contents panel with Contents, Search and Notes tabs over the book."></div>
+    <div class="tour-stage">
+      <div class="phone"><div class="shots">
+        <img class="shot is-on" src="img/reader.jpg" width="646" height="1400" alt="A page of Relativity with a passage highlighted in green and the reading dock below.">
+        <img class="shot" loading="lazy" src="img/select.jpg" width="646" height="1400" alt="A selected passage with the menu: Highlight, Note, Ask Atlas, Copy.">
+        <img class="shot" loading="lazy" src="img/contents.jpg" width="646" height="1400" alt="The contents panel with Contents, Search and Notes tabs over the book.">
+      </div></div>
+      <div class="tour-dots" aria-hidden="true"><span class="is-on"></span><span></span><span></span></div>
     </div>
   </section>
 
@@ -154,5 +158,6 @@
   </div>
 </footer>
 
+<script src="tour.js" defer></script>
 </body>
 </html>
