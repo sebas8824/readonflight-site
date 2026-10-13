@@ -1,4 +1,4 @@
-// The feature tour: the step nearest the middle of the screen picks the phone's screenshot.
+// The feature tour: the step crossing the reading line picks the pinned phone's screenshot.
 (function () {
   const tour = document.querySelector(".tour");
   if (!tour || !("IntersectionObserver" in window)) return;
@@ -13,20 +13,12 @@
     dots.forEach((d, i) => d.classList.toggle("is-on", i === index));
   };
 
-  const middle = new IntersectionObserver((entries) => {
+  // Narrow screens pin the phone over the top half, so the words are read lower down.
+  const line = matchMedia("(max-width: 820px)").matches ? "-68% 0px -30% 0px" : "-45% 0px -45% 0px";
+  const observer = new IntersectionObserver((entries) => {
     for (const entry of entries) {
       if (entry.isIntersecting) show(steps.indexOf(entry.target));
     }
-  }, { rootMargin: "-45% 0px -45% 0px" });
-
-  const reveal = new IntersectionObserver((entries) => {
-    for (const entry of entries) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("seen");
-        reveal.unobserve(entry.target);
-      }
-    }
-  }, { threshold: 0.2 });
-
-  steps.forEach((s) => { middle.observe(s); reveal.observe(s); });
+  }, { rootMargin: line });
+  steps.forEach((s) => observer.observe(s));
 })();

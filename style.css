@@ -105,7 +105,6 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.01e
 /* Feature tour: the phone stays put while the steps scroll past it (tour.js picks the shot). */
 .tour { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; }
 .step { min-height: 88vh; display: flex; align-items: center; }
-.step-shot { display: none; }
 .js .step .copy { opacity: 0.28; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.6s ease; }
 .js .step.is-active .copy { opacity: 1; transform: none; }
 .tour-stage { position: sticky; top: max(4.5rem, calc(50vh - 340px)); align-self: start; }
@@ -150,19 +149,17 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.01e
   .bar nav { gap: 0.9rem; }
   .phone { max-width: 280px; }
   .phone.small { max-width: 250px; }
-  /* Too narrow to pin a phone beside the words: each step brings its own shot up as it arrives. */
-  .tour { display: block; }
-  .tour-stage { display: none; }
-  .step { min-height: 0; display: grid; gap: 2rem; padding: 1.5rem 0 2.5rem; }
-  .step-shot { display: block; }
-  .js .step .copy { opacity: 1; transform: none; }
-  .js .step { opacity: 0; transform: translateY(36px); transition: opacity 0.6s ease, transform 0.7s ease; }
-  .js .step.seen { opacity: 1; transform: none; }
+  /* Narrow: the phone pins in a band under the header and the words scroll up beneath it. */
+  .tour { display: flex; flex-direction: column; gap: 0; }
+  .tour-stage { order: -1; align-self: stretch; top: 0; z-index: 1; padding: 0.75rem 0 1rem; background: var(--ground); box-shadow: 0 14px 18px -10px var(--ground); }
+  .tour-stage .phone { max-width: min(240px, 21vh); padding: 6px; border-radius: 28px; }
+  .tour-stage .phone img { border-radius: 23px; }
+  .tour-dots { margin-top: 0.75rem; }
+  .step { min-height: 62vh; align-items: flex-start; padding-top: 2rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .js .step, .js .step .copy, .shot, .tour-dots span { transition: none; }
-  .js .step { opacity: 1; transform: none; }
+  .js .step .copy, .shot, .tour-dots span { transition: none; }
 }
 
 /* ---------- Policy pages ---------- */
