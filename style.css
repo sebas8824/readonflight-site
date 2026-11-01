@@ -163,6 +163,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.01e
 .project-steps h3 { margin: 0 0 0.4rem; font-size: 1.2rem; }
 .project-steps p { margin: 0; color: var(--ink-2); font-size: 0.98rem; }
 .projects .fine, .try .fine { color: var(--ink-2); font-size: 0.9rem; margin: 1.5rem 0 0; }
+.try .fine + .fine { margin-top: 0.4rem; }
 
 /* Atlas lives on the shelf green, like the app's own chrome. */
 .atlas { background: var(--shelf); color: var(--on-shelf); }
