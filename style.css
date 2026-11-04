@@ -1,4 +1,3 @@
-/* Tokens mirror the app's DesignSystem (Oxford Archive, ADR-0019). Gold is a fill, never text on vellum. */
 :root {
   --ground: #f4efe4;
   --surface: #faf7f2;
